@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "929460459024",
+    "project_id": "genai-807bd",
+    "storage_bucket": "genai-807bd.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:929460459024:android:d7484e4526d22ea11d1c95",
+        "android_client_info": {
+          "package_name": "com.example.artisans"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzdL5_suJUXKd9b-JzPHRl1_6y62GInH4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
