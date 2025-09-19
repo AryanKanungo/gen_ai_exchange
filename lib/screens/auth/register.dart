@@ -7,21 +7,22 @@ import '../home/home_screen.dart';
 import 'login_screen.dart';
 
 
-
 class RegisterScreen extends StatelessWidget {
-  final _authService = AuthService();
+  final AuthService _authService = AuthService();
 
+  final TextEditingController nameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController confirmPasswordController =
   TextEditingController();
 
   void _register() async {
+    String name = nameController.text.trim();
     String email = emailController.text.trim();
     String password = passwordController.text.trim();
     String confirmPassword = confirmPasswordController.text.trim();
 
-    if (email.isEmpty || password.isEmpty || confirmPassword.isEmpty) {
+    if (name.isEmpty || email.isEmpty || password.isEmpty || confirmPassword.isEmpty) {
       Get.snackbar("Error", "Please fill all fields");
       return;
     }
@@ -32,7 +33,7 @@ class RegisterScreen extends StatelessWidget {
     }
 
     try {
-      final user = await _authService.registerWithEmailPassword(email, password);
+      final user = await _authService.registerWithEmailPassword(email, password, name);
       if (user != null) {
         Get.offAll(() => const HomeScreen());
         Get.snackbar("Success", "Account created successfully");
@@ -55,7 +56,7 @@ class RegisterScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               // Heading
-              Container(
+              SizedBox(
                 width: MediaQuery.of(context).size.width * 0.75,
                 child: Column(
                   children: [
@@ -64,10 +65,10 @@ class RegisterScreen extends StatelessWidget {
                       style: GoogleFonts.poppins(
                         fontSize: 26,
                         fontWeight: FontWeight.bold,
-                        color: Color(0xFF7695FF),
+                        color: const Color(0xFF7695FF),
                       ),
                     ),
-                    SizedBox(height: 30),
+                    const SizedBox(height: 30),
                     Text(
                       "Welcome to ...!",
                       textAlign: TextAlign.center,
@@ -87,14 +88,17 @@ class RegisterScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     CustomTextField(
+                        label: "Name", controller: nameController),
+                    const SizedBox(height: 20),
+                    CustomTextField(
                         label: "Email", controller: emailController),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     CustomTextField(
                       label: "Password",
                       controller: passwordController,
                       obscureText: true,
                     ),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     CustomTextField(
                       label: "Confirm Password",
                       controller: confirmPasswordController,
@@ -104,9 +108,9 @@ class RegisterScreen extends StatelessWidget {
                 ),
               ),
 
-              SizedBox(height: 30),
+              const SizedBox(height: 30),
               // Register Button
-              Container(
+              SizedBox(
                 width: MediaQuery.of(context).size.width * 0.8,
                 height: 60,
                 child: ElevatedButton(
@@ -117,7 +121,7 @@ class RegisterScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(7),
                     ),
                   ),
-                  child: Text(
+                  child: const Text(
                     'Sign up',
                     style: TextStyle(
                       fontSize: 20,
@@ -128,7 +132,7 @@ class RegisterScreen extends StatelessWidget {
                 ),
               ),
 
-              SizedBox(height: 25),
+              const SizedBox(height: 25),
               TextButton(
                 onPressed: () {
                   Get.offAll(() => LoginScreen());

@@ -41,7 +41,7 @@ class AuthService {
   }
 
   //register with email and password
-  Future<User?> registerWithEmailPassword(String email, String password) async {
+  Future<User?> registerWithEmailPassword(String email, String password, String name) async {
     try {
       UserCredential cred = await FirebaseAuth.instance
           .createUserWithEmailAndPassword(email: email, password: password);
@@ -49,6 +49,7 @@ class AuthService {
       String uid = cred.user!.uid;
 
       await FirebaseFirestore.instance.collection('Artisans').doc(uid).set({
+        'name': name,
         'email': email,
         'createdAt': FieldValue.serverTimestamp(),
       });

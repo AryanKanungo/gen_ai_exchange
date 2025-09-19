@@ -7,7 +7,7 @@ Widget PostCard(BuildContext context) {
     width: double.infinity,
     padding: const EdgeInsets.all(20.0),
     decoration: BoxDecoration(
-      color: Colors.orangeAccent,
+      color: Color(0xFF7695FF),
       borderRadius: BorderRadius.circular(12.0),
     ),
     child: Column(
@@ -28,17 +28,18 @@ Widget PostCard(BuildContext context) {
             //Get.to(() => DonationDetection());
           },
           style: ElevatedButton.styleFrom(
-            backgroundColor: Color(0xFF7695FF),
+            backgroundColor: Colors.teal[200],
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(7),
             ),
           ),
-          child: Text('',
+          child: Text('+ Create',
             style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold,
               color: Colors.white,
-            ),),
+            ),
+          ),
 
         ),
       ],
