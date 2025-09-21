@@ -90,7 +90,7 @@ class CustomDrawer extends StatelessWidget {
             ),
             onTap: () {
               if (context.mounted) {
-                Get.to(() => MyProducts());
+                Get.to(() => MyProductsScreen());
               }
             },
           )

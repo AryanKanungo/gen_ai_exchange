@@ -2,19 +2,26 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:get/get.dart';
 
-import '../../post/add_post_screen.dart';
+import '../../analytics/analytics_page.dart';
 
-// Assuming AddPostPage is defined in the correct location
-// import 'package:artisans/screens/post/add_post_screen.dart';
+// Assuming AnalyticsPage is defined in the correct location
+// import 'package:artisans/screens/analytics/analytics_page.dart';
 
-class PostCard extends StatelessWidget {
-  const PostCard({super.key});
+class AnalyticsCardWidget extends StatelessWidget {
+  // Pass in data from your backend
+  final int totalViews;
+  final int totalLikes;
+
+  const AnalyticsCardWidget({
+    super.key,
+    this.totalViews = 1543,
+    this.totalLikes = 215,
+  });
 
   @override
   Widget build(BuildContext context) {
     const Color primaryColor = Color(0xFF6A88E5);
     const Color secondaryColor = Color(0xFFFBD259);
-    const Color greenColor = Color(0xFF65D49C);
     const Color textColor = Color(0xFF333333);
 
     return Container(
@@ -68,16 +75,15 @@ class PostCard extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 32.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Icon(
-                  Icons.add_a_photo_rounded,
+                  Icons.auto_graph_rounded,
                   size: 60.0,
                   color: Colors.white,
                 ),
                 const SizedBox(height: 16.0),
                 Text(
-                  "Ready to Share Your Creation?",
+                  "Your Product Stats",
                   style: GoogleFonts.montserrat(
                     fontSize: 22.0,
                     fontWeight: FontWeight.w700,
@@ -86,31 +92,36 @@ class PostCard extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 24.0),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    _buildStatItem("Views", totalViews, Icons.visibility_rounded, secondaryColor),
+                    _buildStatItem("Likes", totalLikes, Icons.favorite_rounded, secondaryColor),
+                  ],
+                ),
+                const SizedBox(height: 32.0),
                 SizedBox(
                   width: double.infinity,
-                  child: ElevatedButton.icon(
+                  child: ElevatedButton(
                     onPressed: () {
-                      Get.to(() => AddPostPage());
+                      // This is the navigation to the analytics screen.
+                      Get.to(() => AnalyticsPage());
                     },
-                    icon: const Icon(
-                      Icons.add_outlined,
-                      color: Colors.white,
-                    ),
-                    label: Text(
-                      'Create Post',
-                      style: GoogleFonts.montserrat(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
-                    ),
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Color(0xFF16C47F),
+                      backgroundColor: secondaryColor,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15),
                       ),
                       padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
                       elevation: 5,
+                    ),
+                    child: Text(
+                      'View Details',
+                      style: GoogleFonts.montserrat(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: textColor,
+                      ),
                     ),
                   ),
                 ),
@@ -119,6 +130,31 @@ class PostCard extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+
+  Widget _buildStatItem(String label, int value, IconData icon, Color color) {
+    return Column(
+      children: [
+        Icon(icon, size: 30, color: color),
+        const SizedBox(height: 8.0),
+        Text(
+          value.toString(),
+          style: GoogleFonts.montserrat(
+            fontSize: 24.0,
+            fontWeight: FontWeight.w700,
+            color: color,
+          ),
+        ),
+        Text(
+          label,
+          style: GoogleFonts.montserrat(
+            fontSize: 14.0,
+            fontWeight: FontWeight.w500,
+            color: Colors.white, // Changed to white for better contrast
+          ),
+        ),
+      ],
     );
   }
 }

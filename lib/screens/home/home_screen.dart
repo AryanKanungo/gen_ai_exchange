@@ -1,3 +1,4 @@
+import 'package:artisans/screens/home/modules/analytics_card.dart';
 import 'package:artisans/screens/home/modules/communitycorner_card.dart';
 import 'package:artisans/screens/home/modules/post_card.dart';
 import 'package:flutter/material.dart';
@@ -16,14 +17,18 @@ class HomeScreen extends StatelessWidget {
       drawer: CustomDrawer(),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(4.0),
           child: Column(
             children: [
-            PostCard(context),
+            PostCard(),
+              SizedBox(height: 16),
+              AnalyticsCardWidget(),
+              SizedBox(height: 16),
+              LearningSupportCard(),
+              SizedBox(height: 16),
               const SizedBox(height: 16),
               CommunityCornerCard(),
               SizedBox(height: 16),
-              LearningSupportCard(),
             ],
           ),
         ),
