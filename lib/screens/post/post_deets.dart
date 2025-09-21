@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+// Assuming ApiService is in this path for the AI functionality to remain.
+// If you don't need that either, you can remove this import and the _generateDescription method.
 import '../../services/api_service.dart';
 
 class PostDetailsForm extends StatefulWidget {
@@ -26,6 +28,7 @@ class PostDetailsForm extends StatefulWidget {
 class _PostDetailsFormState extends State<PostDetailsForm> {
   bool _isAIOptionSelected = false;
 
+  // AI functionality is kept as it was part of the original code.
   void _generateDescription() async {
     try {
       final result = await ApiService.enhanceDescription(
@@ -38,9 +41,6 @@ class _PostDetailsFormState extends State<PostDetailsForm> {
       setState(() {
         widget.descriptionController.text = result["short_description"] ?? "";
       });
-
-      // You can also access:
-      // result["title"], result["long_description"], result["bullet_points"], etc.
     } catch (e) {
       print("AI Description Error: $e");
     }
@@ -102,38 +102,14 @@ class _PostDetailsFormState extends State<PostDetailsForm> {
               dropdownColor: Colors.white,
               icon: const Icon(Icons.arrow_drop_down_rounded, color: primaryColor),
               items: const [
-                DropdownMenuItem(
-                  value: "jewelry",
-                  child: Text("Jewelry"),
-                ),
-                DropdownMenuItem(
-                  value: "accessories",
-                  child: Text("Accessories"),
-                ),
-                DropdownMenuItem(
-                  value: "clothing",
-                  child: Text("Clothing"),
-                ),
-                DropdownMenuItem(
-                  value: "home_decor",
-                  child: Text("Home Decor"),
-                ),
-                DropdownMenuItem(
-                  value: "art_craft",
-                  child: Text("Art & Craft"),
-                ),
-                DropdownMenuItem(
-                  value: "ceramics",
-                  child: Text("Ceramics"),
-                ),
-                DropdownMenuItem(
-                  value: "textiles",
-                  child: Text("Textiles"),
-                ),
-                DropdownMenuItem(
-                  value: "other",
-                  child: Text("Other"),
-                ),
+                DropdownMenuItem(value: "jewelry", child: Text("Jewelry")),
+                DropdownMenuItem(value: "accessories", child: Text("Accessories")),
+                DropdownMenuItem(value: "clothing", child: Text("Clothing")),
+                DropdownMenuItem(value: "home_decor", child: Text("Home Decor")),
+                DropdownMenuItem(value: "art_craft", child: Text("Art & Craft")),
+                DropdownMenuItem(value: "ceramics", child: Text("Ceramics")),
+                DropdownMenuItem(value: "textiles", child: Text("Textiles")),
+                DropdownMenuItem(value: "other", child: Text("Other")),
               ],
               onChanged: (val) => widget.onCategoryChanged(val!),
             ),
@@ -145,21 +121,38 @@ class _PostDetailsFormState extends State<PostDetailsForm> {
                 "Describe your creation",
                 Icons.description,
                 primaryColor,
-                IconButton(
-                  icon: Icon(
-                    Icons.auto_awesome_rounded,
-                    color: _isAIOptionSelected ? primaryColor : secondaryColor,
-                  ),
-                  onPressed: () {
-                    setState(() {
-                      _isAIOptionSelected = !_isAIOptionSelected;
-                      if (_isAIOptionSelected) {
-                        _generateDescription();
-                      } else {
-                        widget.descriptionController.clear();
-                      }
-                    });
-                  },
+                // A Row holds both icons.
+                Row(
+                  mainAxisSize: MainAxisSize.min, // Keeps the icons compact
+                  children: [
+                    // The new microphone icon with a dummy onPressed function.
+                    IconButton(
+                      icon: const Icon(
+                        Icons.mic_none,
+                        color: primaryColor,
+                      ),
+                      onPressed: () {
+                        // Placeholder for speech-to-text functionality
+                        print("Mic icon pressed!");
+                      },
+                    ),
+                    IconButton(
+                      icon: Icon(
+                        Icons.auto_awesome_rounded,
+                        color: _isAIOptionSelected ? primaryColor : secondaryColor,
+                      ),
+                      onPressed: () {
+                        setState(() {
+                          _isAIOptionSelected = !_isAIOptionSelected;
+                          if (_isAIOptionSelected) {
+                            _generateDescription();
+                          } else {
+                            widget.descriptionController.clear();
+                          }
+                        });
+                      },
+                    ),
+                  ],
                 ),
               ),
               maxLines: 4,
