@@ -91,7 +91,7 @@ class _PostDetailsFormState extends State<PostDetailsForm> {
             TextFormField(
               controller: widget.priceController,
               style: GoogleFonts.montserrat(color: textColor, fontWeight: FontWeight.w500),
-              decoration: _inputDecoration("Price", Icons.attach_money, greenColor),
+              decoration: _inputDecoration("Price", Icons.currency_rupee_rounded, greenColor),
               keyboardType: TextInputType.number,
             ),
             const SizedBox(height: 18),

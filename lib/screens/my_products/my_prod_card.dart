@@ -70,7 +70,7 @@ class MyProdCard extends StatelessWidget {
                     ),
                     const SizedBox(width: 8),
                     Text(
-                      "\$${post.price.toStringAsFixed(2)}",
+                      "\₹${post.price.toStringAsFixed(2)}",
                       style: const TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
