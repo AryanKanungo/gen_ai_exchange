@@ -124,7 +124,7 @@ BUCKET_NAME=emerald-pipe-472704-m5-artisan-media
 
 
 
-##  Estimated Costs (India, Monthly)
+##  Estimated Costs (India)
 | Service           | Pilot Cost (₹) |
 | ----------------- | -------------- |
 | Identity Platform | ₹0             |
@@ -141,30 +141,25 @@ BUCKET_NAME=emerald-pipe-472704-m5-artisan-media
 
 ##  USP
 
-Unlike generic marketplaces, our platform is *custom-built for artisans, turning **raw product images + simple descriptions + voice stories* into *professional e-commerce listings with AI-generated content, polished visuals, and real-time sales coaching*.
+Unlike generic marketplaces, our platform is custom-built for artisans, turning raw product images + simple descriptions + voice stories into professional e-commerce listings with AI-generated content, polished visuals, and real-time sales coaching.
 
 
 
 ##  Screens / Wireframes
 
- Landing page with Artisan login/signup
- Dashboard with revenue/orders/AI insights
- Add product with “Enhance with AI”
- Image upload & cleanup (before/after)
- Speech-to-Pitch generation screen
- Orders table + Stats dashboard
+* Landing page with Artisan login/signup
+* Dashboard with revenue/orders/AI insights
+* Add product with “Enhance with AI”
+* Image upload & cleanup (before/after)
+* Speech-to-Pitch generation screen
+* Orders table + Stats dashboard
 
 
 
 ##  Team
 
-[Ananya Baweja / Leader]
-[Aryan Kanungo]
-[Soha Chand]
-[Kartik Agrawal]
-[Atharv Dixit]
-
-
-##  License
-
-MIT License. Free to use for hackathons, research, and academic projects.
+*[Ananya Baweja / Leader]
+ [Aryan Kanungo]
+ [Soha Chand]
+ [Kartik Agrawal]
+ [Atharv Dixit]
