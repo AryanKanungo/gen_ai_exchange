@@ -1,16 +1,11 @@
-Here’s a clean *README.md* you can drop into your GitHub repo for the *AI-Powered Artisan Marketplace* app. I’ve kept it hackathon-ready but professional:
+#  AI-Powered Artisan Marketplace
 
----
+An AI-driven digital marketplace platform designed to empower local artisans to bring their craft online with professional product presentation, marketing storytelling, and data-driven sales insights.
 
-# 🧵 AI-Powered Artisan Marketplace
+Built using Google Cloud Platform (Vertex AI Gemini, Vertex AI Imagen, Cloud Speech-to-Text, Firestore, Cloud Storage, Identity Platform, Cloud Run) and FastAPI + Flutter Web.
 
-An AI-driven digital marketplace platform designed to empower *local artisans* to bring their craft online with *professional product presentation, marketing storytelling, and data-driven sales insights*.
 
-Built using *Google Cloud Platform* (Vertex AI Gemini, Vertex AI Imagen, Cloud Speech-to-Text, Firestore, Cloud Storage, Identity Platform, Cloud Run) and *FastAPI + Flutter Web*.
-
----
-
-## ✨ Features
+## Features
 
 * *Secure Login* – Artisans authenticate via *Identity Platform*.
 * *Product Creation* – Add product details with a simple form.
@@ -26,9 +21,9 @@ Built using *Google Cloud Platform* (Vertex AI Gemini, Vertex AI Imagen, Cloud S
   * Product bundling ideas
 * *Orders & Stats* – Artisans can track orders, revenue, and sales trends in real time.
 
----
 
-## 🏗 Architecture
+
+##  Architecture
 
 
 [Frontend: Flutter Web]  -->  [Backend: FastAPI on Cloud Run]
@@ -40,9 +35,9 @@ Built using *Google Cloud Platform* (Vertex AI Gemini, Vertex AI Imagen, Cloud S
                                    Speech-to-Text
 
 
----
 
-## 📂 Project Structure
+
+##  Project Structure
 
 
 artisan-marketplace/
@@ -60,14 +55,14 @@ artisan-marketplace/
 └── README.md
 
 
----
+
 
 ## ⚙ Setup & Deployment
 
 ### 1. Clone repo
 
 bash
-git clone https://github.com/YOUR_USERNAME/artisan-marketplace.git
+git clone https://github.com/AryanKanungo/artisan-marketplace.git
 cd artisan-marketplace
 
 
@@ -75,7 +70,7 @@ cd artisan-marketplace
 
 *Dependencies*
 
-bash
+bash	
 cd backend
 pip install -r requirements.txt
 
@@ -93,7 +88,17 @@ gcloud run deploy artisans-api \
   --source . \
   --region us-central1 \
   --allow-unauthenticated \
-  --set-env-vars=PROJECT_ID=your-project-id,LOCATION=us-central1,BUCKET_NAME=your-bucket
+  --set-env-vars=PROJECT_ID=emerald-pipe-472704-m5,LOCATION=us-central1,BUCKET_NAME=emerald-pipe-472704-m5-artisan-media
+
+*Libraries*
+
+pip install google-cloud-firestore \
+            google-cloud-storage \
+            google-cloud-aiplatform \
+            google-cloud-speech \
+            google-cloud-run
+pip install firebase-admin
+
 
 
 ### 3. Frontend (Flutter Web + Firebase Hosting)
@@ -105,63 +110,61 @@ firebase init hosting
 firebase deploy
 
 
----
 
-## 🔑 Environment Variables (.env)
+
+##  Environment Variables (.env)
 
 Create a .env file inside backend/ with:
 
 
 GOOGLE_APPLICATION_CREDENTIALS=gcp-credentials.json
-PROJECT_ID=your-project-id
+PROJECT_ID=emerald-pipe-472704-m5
 LOCATION=us-central1
-BUCKET_NAME=your-bucket-name
+BUCKET_NAME=emerald-pipe-472704-m5-artisan-media
 
 
----
 
-## 💸 Estimated Costs (India, Monthly)
+##  Estimated Costs (India, Monthly)
+| Service           | Pilot Cost (₹) |
+| ----------------- | -------------- |
+| Identity Platform | ₹0             |
+| Firestore         | ₹1,500         |
+| Cloud Storage     | ₹200           |
+| Vertex AI Gemini  | ₹2,000         |
+| Vertex AI Imagen  | ₹9,000         |
+| Speech-to-Text    | ₹100           |
+| Cloud Run         | ₹300           |
+| **Total**         | \~₹13,100      |
 
-| Service           | Pilot (\~50 artisans) | Scaling (\~500 artisans) |
-| ----------------- | --------------------- | ------------------------ |
-| Identity Platform | ₹0                    | ₹9,225                   |
-| Firestore         | ₹1,500                | ₹20,000+                 |
-| Cloud Storage     | ₹200                  | ₹3,000                   |
-| Vertex AI Gemini  | ₹2,000                | ₹20,000                  |
-| Vertex AI Imagen  | ₹9,000                | ₹80,000+                 |
-| Speech-to-Text    | ₹100                  | ₹1,000                   |
-| Cloud Run         | ₹300                  | ₹5,000                   |
-| *Total*         | *\~₹13k–15k*        | *₹1.2L+*               |
 
----
 
-## 🌟 USP
+
+##  USP
 
 Unlike generic marketplaces, our platform is *custom-built for artisans, turning **raw product images + simple descriptions + voice stories* into *professional e-commerce listings with AI-generated content, polished visuals, and real-time sales coaching*.
 
----
 
-## 📸 Screens / Wireframes
 
-* Landing page with Artisan login/signup
-* Dashboard with revenue/orders/AI insights
-* Add product with “Enhance with AI”
-* Image upload & cleanup (before/after)
-* Speech-to-Pitch generation screen
-* Orders table + Stats dashboard
+##  Screens / Wireframes
 
----
+ Landing page with Artisan login/signup
+ Dashboard with revenue/orders/AI insights
+ Add product with “Enhance with AI”
+ Image upload & cleanup (before/after)
+ Speech-to-Pitch generation screen
+ Orders table + Stats dashboard
 
-## 👥 Team
 
-* \[Your Team Members / Roles]
 
----
+##  Team
 
-## 📜 License
+[Ananya Baweja / Leader]
+[Aryan Kanungo]
+[Soha Chand]
+[Kartik Agrawal]
+[Atharv Dixit]
+
+
+##  License
 
 MIT License. Free to use for hackathons, research, and academic projects.
-
----
-
-👉 Do you want me to also prepare a *README badge set* (shields.io badges for “Python”, “FastAPI”, “Flutter”, “Google Cloud”) so the repo looks more professional?
