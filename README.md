@@ -61,24 +61,27 @@ artisan-marketplace/
 
 ### 1. Clone repo
 
-bash
+```bash
 git clone https://github.com/AryanKanungo/artisan-marketplace.git
 cd artisan-marketplace
+```
 
 
 ### 2. Backend (FastAPI on Cloud Run)
 
 *Dependencies*
 
-bash	
+```bash	
 cd backend
-pip install -r requirements.txt
+pip install -r requirements.txt'
+```
 
 
 *Run locally*
 
-bash
+```bash
 uvicorn main:app --reload --port 8000
+```
 
 
 *Deploy*
