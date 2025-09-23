@@ -62,8 +62,8 @@ artisan-marketplace/
 ### 1. Clone repo
 
 bash
-```git clone https://github.com/AryanKanungo/artisan-marketplace.git
-'''cd artisan-marketplace```
+```git clone https://github.com/AryanKanungo/artisan-marketplace.git```
+```cd artisan-marketplace```
 
 
 ### 2. Backend (FastAPI on Cloud Run)
@@ -71,8 +71,8 @@ bash
 *Dependencies*
 
 bash	
-```cd backend
-pip install -r requirements.txt```
+```cd backend```
+```pip install -r requirements.txt```
 
 
 *Run locally*
@@ -82,11 +82,11 @@ bash
 
 *Libraries*
 
-```pip install google-cloud-firestore \
-            google-cloud-storage \
-            google-cloud-aiplatform \
-            google-cloud-speech \
-            google-cloud-run```
+```pip install google-cloud-firestore \```
+            ```google-cloud-storage \```
+            ```google-cloud-aiplatform \```
+            ```google-cloud-speech \```
+            ```google-cloud-run```
 
 ```pip install firebase-admin```
 
@@ -95,10 +95,10 @@ bash
 ### 3. Frontend (Flutter Web + Firebase Hosting)
 
 bash
-cd frontend
-flutter build web
-firebase init hosting
-firebase deploy
+```cd frontend```
+```flutter build web```
+```firebase init hosting```
+```firebase deploy```
 
 
 
