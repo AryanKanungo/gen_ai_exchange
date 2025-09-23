@@ -61,46 +61,34 @@ artisan-marketplace/
 
 ### 1. Clone repo
 
-```bash
-git clone https://github.com/AryanKanungo/artisan-marketplace.git
-cd artisan-marketplace
-```
+bash
+```git clone https://github.com/AryanKanungo/artisan-marketplace.git
+cd artisan-marketplace```
 
 
 ### 2. Backend (FastAPI on Cloud Run)
 
 *Dependencies*
 
-```bash	
-cd backend
-pip install -r requirements.txt'
-```
+bash	
+```cd backend
+pip install -r requirements.txt```
 
 
 *Run locally*
 
-```bash
-uvicorn main:app --reload --port 8000
-```
-
-
-*Deploy*
-
 bash
-gcloud run deploy artisans-api \
-  --source . \
-  --region us-central1 \
-  --allow-unauthenticated \
-  --set-env-vars=PROJECT_ID=emerald-pipe-472704-m5,LOCATION=us-central1,BUCKET_NAME=emerald-pipe-472704-m5-artisan-media
+```uvicorn main:app --reload --port 8000```
 
 *Libraries*
 
-pip install google-cloud-firestore \
+```pip install google-cloud-firestore \
             google-cloud-storage \
             google-cloud-aiplatform \
             google-cloud-speech \
-            google-cloud-run
-pip install firebase-admin
+            google-cloud-run```
+
+```pip install firebase-admin```
 
 
 
@@ -161,8 +149,8 @@ Unlike generic marketplaces, our platform is custom-built for artisans, turning 
 
 ##  Team
 
-[Ananya Baweja / Leader]
-[Aryan Kanungo]
-[Soha Chand]
-[Kartik Agrawal]
-[Atharv Dixit]
+*[Ananya Baweja / Leader]
+ [Aryan Kanungo]
+ [Soha Chand]
+ [Kartik Agrawal]
+ [Atharv Dixit]
