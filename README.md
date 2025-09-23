@@ -63,7 +63,7 @@ artisan-marketplace/
 
 bash
 ```git clone https://github.com/AryanKanungo/artisan-marketplace.git
-cd artisan-marketplace```
+'''cd artisan-marketplace```
 
 
 ### 2. Backend (FastAPI on Cloud Run)
