@@ -158,8 +158,8 @@ Unlike generic marketplaces, our platform is custom-built for artisans, turning 
 
 ##  Team
 
-*[Ananya Baweja / Leader]
- [Aryan Kanungo]
- [Soha Chand]
- [Kartik Agrawal]
- [Atharv Dixit]
+[Ananya Baweja / Leader]
+[Aryan Kanungo]
+[Soha Chand]
+[Kartik Agrawal]
+[Atharv Dixit]
